@@ -87,16 +87,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              {{ meta.firstquote }}
+              {{ meta.unoquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              {{ meta.firstname }}
+              {{ meta.unoname }}
             </h3>
             <p class="text-sm text-neutral-600">
-              {{ meta.firstinfo }}
+              {{ meta.unoinfo }}
             </p>
           </div>
         </div>
@@ -106,16 +106,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              {{ meta.firstquote }}
+              {{ meta.dosquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              {{ meta.firstname }}
+              {{ meta.dosname }}
             </h3>
             <p class="text-sm text-neutral-600">
-              {{ meta.firstinfo }}
+              {{ meta.dosinfo }}
             </p>
           </div>
         </div>
@@ -125,16 +125,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              {{ meta.firstquote }}
+              {{ meta.tresquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              {{ meta.firstname }}
+              {{ meta.tresname }}
             </h3>
             <p class="text-sm text-neutral-600">
-             {{ meta.firstinfo }}
+             {{ meta.tresinfo }}
             </p>
           </div>
         </div>
@@ -440,12 +440,6 @@
             }
           })
           .then(response => (this.items = response.data.results))
-      },
-      methods: {
-        // Convert comma seperated tags to an array
-        getTags: function (tags) {
-          return tags.split(',')
-        }
       }
     })
   </script>
