@@ -71,10 +71,10 @@
       <!-- Title -->
       <div class="mb-6 lg:mb-10 flex justify-start lg:justify-between flex-col lg:flex-row px-4 md:px-6">
         <div class="w-full sm:max-w-sm">
-          <h1 class="text-2xl font-bold sm:text-3xl md:text-4xl leading-7 sm:leading-8 md:leading-10 tracking-tight">{{ meta.title }}</h1>
+          <h1 class="text-2xl font-bold sm:text-3xl md:text-4xl leading-7 sm:leading-8 md:leading-10 tracking-tight">{{ meta.heading }}</h1>
         </div>
         <div class="max-w-sm">
-          <p class="my-2 text-base leading-[1.4] text-neutral-600">Conchos brings you delicious pastries and desserts from Iriga City—baked by Liquee and inspired by her grandparents, Conching and Santos.</p>
+          <p class="my-2 text-base leading-[1.4] text-neutral-600">{{ meta.description }}</p>
         </div>
         <div class="text-left lg:text-right">
           <a x-on:click.prevent="$scrollTo({ offsetHeader: true })" href="#contact" class="my-2 py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-black text-white hover:bg-neutral-800 focus:outline-hidden focus:bg-neutral-800 text-nowrap">Get in touch</a>
@@ -87,16 +87,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              Supporting local never tasted this good. Everything from Conchos' feels personal—flavors, stories, and service. You won’t regret ordering.
+              {{ meta.firstquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              Juan Dela Cruz
+              {{ meta.firstname }}
             </h3>
             <p class="text-sm text-neutral-600">
-              Proprietor | Acme
+              {{ meta.firstinfo }}
             </p>
           </div>
         </div>
@@ -106,16 +106,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              Conchos' has become our go-to for every celebration. Liquee’s pastries are consistently delicious and beautifully packed. Homemade happiness, indeed.
+              {{ meta.firstquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              Juan Dela Cruz
+              {{ meta.firstname }}
             </h3>
             <p class="text-sm text-neutral-600">
-              Proprietor | Acme
+              {{ meta.firstinfo }}
             </p>
           </div>
         </div>
@@ -125,16 +125,16 @@
         <div class="flex flex-col bg-white border border-gray-200 rounded-xl p-4 md:p-6">
           <div class="flex-auto">
             <blockquote class="text-base text-neutral-600 leading-[1.4]">
-              There's something comforting about Conchos' desserts—like a warm hug from your lola. My personal favorite? The peanut butter bars!
+              {{ meta.firstquote }}
             </blockquote>
           </div>
 
           <div class="mt-4 md:mt-6">
             <h3 class="text-lg font-semibold text-black">
-              Juan Dela Cruz
+              {{ meta.firstname }}
             </h3>
             <p class="text-sm text-neutral-600">
-              Proprietor | Acme
+             {{ meta.firstinfo }}
             </p>
           </div>
         </div>
@@ -166,60 +166,20 @@
                   <!-- transition-transform duration-700 -->
                   <div
                     class="hs-carousel-body absolute top-0 bottom-0 start-0 flex flex-nowrap opacity-0 transition-transform duration-700">
-                    <div class="hs-carousel-slide px-1">
+                    <div class="hs-carousel-slide px-1" v-for="item in items">
                       <!-- Card -->
                       <div class="flex flex-col bg-white border border-neutral-200 rounded-xl min-h-96">
-                        <img class="w-full h-auto rounded-t-lg aspect-3/2 object-cover" src="placeholder.png" alt="Product name">
+                        <img class="w-full h-auto rounded-t-lg aspect-3/2 object-cover" :src="item.image" alt="Product name">
                         <div class="p-4 md:p-6">
                           <h3 class="text-lg font-semibold text-black">
-                            Product name
+                            {{ item.title }}
                           </h3>
                           <p class="mt-2 text-sm text-neutral-600 truncate">
-                            Lorem ipsum dolor sit amet
+                            {{ item.description }}
                           </p>
                           <div class="mt-4">
                             <span class="py-1.5 px-3 bg-white text-black border border-neutral-200 text-sm rounded-lg">
-                              ₱ 999
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Card -->
-                    </div>
-                    <div class="hs-carousel-slide px-1">
-                      <!-- Card -->
-                      <div class="flex flex-col bg-white border border-neutral-200 rounded-xl min-h-96">
-                        <img class="w-full h-auto rounded-t-lg aspect-3/2 object-cover" src="placeholder.png" alt="Product name">
-                        <div class="p-4 md:p-6">
-                          <h3 class="text-lg font-semibold text-black">
-                            Product name
-                          </h3>
-                          <p class="mt-2 text-sm text-neutral-600 truncate">
-                            Lorem ipsum dolor sit amet
-                          </p>
-                          <div class="mt-4">
-                            <span class="py-1.5 px-3 bg-white text-black border border-neutral-200 text-sm rounded-lg">
-                              ₱ 999
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- Card -->
-                    </div>
-                    <div class="hs-carousel-slide px-1">
-                      <!-- Card -->
-                      <div class="flex flex-col bg-white border border-neutral-200 rounded-xl min-h-96">
-                        <img class="w-full h-auto rounded-t-lg aspect-3/2 object-cover" src="placeholder.png" alt="Product name">
-                        <div class="p-4 md:p-6">
-                          <h3 class="text-lg font-semibold text-black">
-                            Product name
-                          </h3>
-                          <p class="mt-2 text-sm text-neutral-600 truncate">
-                            Lorem ipsum dolor sit amet
-                          </p>
-                          <div class="mt-4">
-                            <span class="py-1.5 px-3 bg-white text-black border border-neutral-200 text-sm rounded-lg">
-                              ₱ 999
+                              {{ item.label }}
                             </span>
                           </div>
                         </div>
@@ -465,14 +425,14 @@
             headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer 17tcVnxqf4l-1enE5gBeJ0-1F5_ZjpDsI75cvHU_KfPKaLNTDtdYMJhEKZA',
-              'X-Sheetson-Spreadsheet-Id': '7ZJG3ty5w9VHw8BF7IP6udG3Iiy6U2vyB8TKvG6pujQ'
+              'X-Sheetson-Spreadsheet-Id': '17ZJG3ty5w9VHw8BF7IP6udG3Iiy6U2vyB8TKvG6pujQ'
             }
           })
           .then(response => (this.meta = response.data.results[0]))
 
         // Fetch the Items data from Sheetson API
         axios
-          .get('https://api.sheetson.com/v2/sheets/PortfolioItems', {
+          .get('https://api.sheetson.com/v2/sheets/CardItems', {
             headers: {
               'Content-Type': 'application/json',
               'Authorization': 'Bearer 17tcVnxqf4l-1enE5gBeJ0-1F5_ZjpDsI75cvHU_KfPKaLNTDtdYMJhEKZA',
